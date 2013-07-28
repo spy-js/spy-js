@@ -1,7 +1,7 @@
 spy-js documentation and samples
 =====
 
-Full documentation writing is in progress, in short for now:
+This is a short version of documentation, full documentation version is in progress. Feel free to ask your questions on stackoverflow (tag spy-js) or in the repository issues.
 
 Install node.js v0.8 or newer from http://nodejs.org
 
@@ -12,6 +12,10 @@ Windows users can use spy-js.exe, other platform users (and windows users if spy
 node spy.js
 ```
 and manually configure browser proxy settings to use spy-js URL, by default localhost:3546
+
+If tracing doesn't work: 
+* make sure that browser proxy settings are using spy-js URL (by default localhost:3546)
+* make sure traced website scripts are not cached in browser (clear the cache if required)
 
 See sampleConfig.js as an example of configuration file.
 
