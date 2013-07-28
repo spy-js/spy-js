@@ -7,7 +7,9 @@ Install node.js v0.8 or newer from http://nodejs.org
 
 Download latest version from http://spy-js.com
 
-Windows users can use spy-js.exe, other platform users should use: node spy.js (and manually configure browser proxy settings to use spy-js URL, by default https://localhost:3546)
+Windows users can use spy-js.exe, other platform users (and windows users if spy-js.exe doesn't work) should use: 
+<code>node spy.js</code> 
+(and manually configure browser proxy settings to use spy-js URL, by default localhost:3546)
 
 See sampleConfig.js as an example of configuration file.
 
