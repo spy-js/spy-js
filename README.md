@@ -1,4 +1,4 @@
-spy-js
+spy-js documentation and samples
 =====
 
 Full documentation writing is in progress, in short for now:
