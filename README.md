@@ -3,7 +3,7 @@ spy-js
 
 Full documentation writing is in progress, in short for now:
 
-Install node.js v0.8 or newer.
+Install node.js v0.8 or newer from http://nodejs.org/
 
 Download latest version from http://spy-js.com
 
