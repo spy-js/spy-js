@@ -20,6 +20,7 @@ See sampleConfig.js as an example of configuration file.
 If tracing doesn't work: 
 * make sure that browser proxy settings are using spy-js URL (by default localhost:3546)
 * make sure traced website scripts are not cached in browser (clear the cache if required)
+* tracing https websites is not supported at the moment
 
 
 #### License
