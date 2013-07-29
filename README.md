@@ -14,7 +14,7 @@ node spy.js
 ```
 and manually configure browser proxy settings to use spy-js URL (by default localhost:3546).
 
-See sampleConfig.js as an example of configuration file.
+After launching spy-js UI you can start global tracing session (if configuration file is not supplied) or trace specific URL. See [sampleConfig.js](https://github.com/spy-js/spy-js/blob/master/sampleConfig.js) as an example of configuration file.
 
 #### Known issues
 If tracing doesn't work (and console output or log file doesn't contain any explanation): 
