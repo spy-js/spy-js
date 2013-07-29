@@ -18,6 +18,12 @@ module.exports = function($) {
       };
 
     // Add more rules for scripts as required
+    
+    // To achieve best tracing performance and more accurate profiling figures:
+    //    instrument only scripts you'll be looking into (set instrument: false for those you're not interested in)
+    //    do not prettify scripts that already looked ok (not minified, formatted nicely)
+    //    set objectDump property to false for scripts where you don't need to trace function params and return values
+    //    set minimum necessary limits inside objectDump property for scripts where need to trace function params and return values
 
     // Following configration means that the rest of scripts are traced,
     // prettified,
