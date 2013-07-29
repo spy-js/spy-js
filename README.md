@@ -1,5 +1,4 @@
-spy-js documentation and samples
-=====
+# spy-js documentation and samples
 
 This is a short version of documentation, full documentation version is in progress.
 
