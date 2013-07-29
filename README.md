@@ -4,15 +4,15 @@ spy-js documentation and samples
 This is a short version of documentation, full documentation version is in progress. Feel free to ask your questions on stackoverflow (tag spy-js) or in the repository issues.
 
 #### Installation
-Install node.js v0.8 or newer from http://nodejs.org
+Install node.js v0.8 or newer from [nodejs website](http://nodejs.org).
 
-Download latest version from http://spy-js.com
+Download latest version from [spy-js website](http://spy-js.com) and extract it from downloaded archive.
 
 Windows users can use spy-js.exe, other platform users (and windows users if spy-js.exe doesn't work) should run: 
 ```shell
 node spy.js
 ```
-and manually configure browser proxy settings to use spy-js URL, by default localhost:3546
+and manually configure browser proxy settings to use spy-js URL (by default localhost:3546).
 
 See sampleConfig.js as an example of configuration file.
 
