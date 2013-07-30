@@ -9,7 +9,7 @@ Install node.js v0.8 or newer from [nodejs website](http://nodejs.org).
 
 Download latest version from [spy-js website](http://spy-js.com) and extract it from downloaded archive.
 
-Windows users can use spy-js.exe, other platform users (and windows users if spy-js.exe doesn't work) should run: 
+Windows users can run spy-js.exe, other platform users (and windows users if spy-js.exe doesn't work for them for whatever reason) should run: 
 ```shell
 node spy.js
 ```
