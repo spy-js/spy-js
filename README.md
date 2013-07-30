@@ -28,6 +28,8 @@ If tracing doesn't work (and console output or log file doesn't contain any expl
 * tracing https websites is not supported at the moment
 * integrated windows authentication is not supported
 
+For windows users: avast antivirus may suspect spy-js.exe and run it in sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, for now you can just configure proxy settings manually (or script setting them) and run [node spy.js] from command line.
+
 #### License
 Documentation and code samples in this repository are licensed under MIT.
 
