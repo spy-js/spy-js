@@ -33,4 +33,4 @@ If tracing doesn't work (and console output or log file doesn't contain any expl
 #### License
 Documentation and code samples in this repository are licensed under MIT.
 
-spy-js tool source code itself is not open, please refer to the tool EULA for more details.
+spy-js tool itself is not open source software, please refer to the tool EULA for more details.
