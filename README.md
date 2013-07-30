@@ -31,6 +31,6 @@ If tracing doesn't work (and console output or log file doesn't contain any expl
 For windows users: avast antivirus may suspect spy-js.exe and run it in sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, for now you can just configure proxy settings manually (or script setting them) and run [node spy.js] from command line.
 
 #### License
-Documentation and code samples in this repository are licensed under MIT.
+Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE).
 
 spy-js tool itself is not open source software, please refer to the tool EULA for more details.
