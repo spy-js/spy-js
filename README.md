@@ -1,7 +1,5 @@
 # spy-js documentation and samples
 
-This is a short version of documentation, full documentation version is in progress.
-
 Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
 
 #### Installation
