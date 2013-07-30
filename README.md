@@ -13,7 +13,7 @@ Windows users can use spy-js.exe, other platform users (and windows users if spy
 ```shell
 node spy.js
 ```
-and manually configure browser proxy settings to use spy-js URL (by default localhost:3546).
+and manually configure browser/network proxy settings to use spy-js URL (defaults: host localhost, port 3546).
 
 #### Configuration
 After launching spy-js UI you can start global tracing session without specifing any configuration. The session will trace all scripts from proxied traffic using default configuration parameters. 
