@@ -20,9 +20,12 @@ After launching spy-js UI you can start global tracing session without specifing
 
 To trace specific URL and configure what and how you'd like to trace, supply configuration in a form of a saved config file path on UI startup (or in a form of ad-hoc code any time after startup in configuration popup). See [sampleConfig.js](https://github.com/spy-js/spy-js/blob/master/sampleConfig.js) as an example of configuration file and description of what and how can be configured (including better performance/profiling accuracy tips).
 
+#### Usage
+To trace a website, after launching spy-js UI, open the website in a browser/device/platform of your choice and perform any actions you'd like to be traced. Switch to spy-js UI to inspect the website javascript code as it executes.
+
 #### Known issues
 If tracing doesn't work (and console output or log file doesn't contain any explanation): 
-* make sure that browser proxy settings are using spy-js URL (by default localhost:3546)
+* make sure that browser/network proxy settings are using spy-js URL (by default localhost:3546)
 * make sure traced website scripts are not cached in browser (clear the cache if required)
 * tracing https websites is not supported at the moment
 * integrated windows authentication is not supported
