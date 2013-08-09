@@ -2,6 +2,11 @@
 
 Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
 
+#### License
+Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE).
+
+spy-js tool itself isn’t open source, but I intend to keep it free while I collect beta feedback. Please refer to the tool EULA and [this article](http://spy-js.com/why.html) for more details. 
+
 #### Installation
 Install node.js v0.8 or newer from [nodejs website](http://nodejs.org).
 
@@ -30,8 +35,3 @@ If tracing doesn't work (and console output or log file doesn't contain any expl
 * integrated windows authentication is not supported
 
 For windows users: avast antivirus may suspect spy-js.exe and run it in sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, for now you can just configure proxy settings manually (or script setting them) and run [node spy.js] from command line.
-
-#### License
-Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE).
-
-spy-js tool itself is not open source software, please refer to the tool EULA for more details.
