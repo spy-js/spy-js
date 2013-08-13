@@ -1,8 +1,8 @@
 ## 0.1.6 (August 13, 2013)
 
 - **Major changes:**
-	- [local proxy mode support (including windows tray application)](https://github.com/spy-js/spy-js/edit/master/README.md#local-proxy)
-	- [local files mapping support, watching, reloading cache, mapping](https://github.com/spy-js/spy-js/edit/master/README.md#mapping-to-local-files)
+	- [local proxy mode support (including windows tray application)](https://github.com/spy-js/spy-js/blob/master/README.md#local-proxy)
+	- [local files mapping support, watching, reloading cache, mapping](https://github.com/spy-js/spy-js/blob/master/README.md#mapping-to-local-files)
 	- start dialog now has a list of recently used session configurations
 	- [massive documentation improvement](https://github.com/spy-js/spy-js)
 
