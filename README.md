@@ -16,6 +16,8 @@ The documentation contains:
 
 If something described in the documentation doesn't work for you, please check that it's not of the [known issues](#known-issues). Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
 
+![spy-js diagram](http://spy-js.com/assets/img/diagram.png)
+
 ## License
 Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE).
 
@@ -43,7 +45,7 @@ After starting spy-js server and configuring proxy settings, open the tool UI in
 
 Click "start session" button in start-up dialog, then open any website you'd like to trace in another browser window.
 
-![spy-js main UI](http://spy-js.com/assets/img/session.png)
+![spy-js new session](http://spy-js.com/assets/img/session.png)
 
 Perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
 
@@ -56,7 +58,7 @@ In the events pane (leftmost) you can see the traced code events as they occur. 
 
 Events of the same type are grouped into visual containers. The header of the container displays average execution time across all events within the container, event name and number of events inside the container. By clicking plus icon, you can expand the container and inspect individual events.
 
-![spy-js main UI](http://spy-js.com/assets/img/events.png)
+![spy-js events pane](http://spy-js.com/assets/img/events.png)
 
 ### Stack
 Once some event in the events pane is clicked, its call stack is displayed in the stack pane (in the middle). The stack is represented in the pane by a tree of function calls. 
@@ -67,7 +69,7 @@ Some tree nodes (functions that called other functions) can be expanded. If the 
 
 The stack pane is searchable. Above the pane there is a search textbox. Start typing the function name you're looking for and the textbox will suggest function names that may satisfy your search. By selecting desired function name and pressing Enter, you'll see the first found instance expanded in the tree, scrolled to and highlighted. By continuing pressing Enter, you'll find and expand the rest of the function occurrences.
 
-![spy-js main UI](http://spy-js.com/assets/img/stack.png)
+![spy-js stack pane](http://spy-js.com/assets/img/stack.png)
 
 ### Code
 Once the function you're interested in is located in the stack tree and clicked, its source code will be opened in the source pane and its execution path will be highlighted. Executed function has yellow background (or red if there's any uncaught exception occurred during the function execution), executed statements are green. Global/program scope execution is displayed using blue background.
@@ -76,7 +78,7 @@ By hovering your mouse over function keyword or return keyword or named paramete
 
 The code pane is searchable. Click the magnifier icon at the top right corner on the pane or press [Ctrl/Command + F] when the code editor has focus to search the opened code file.
 
-![spy-js main UI](http://spy-js.com/assets/img/code_pane.png)
+![spy-js code pane](http://spy-js.com/assets/img/code_pane.png)
 
 ### Miscellaneous
 At the bottom right corner you can find action icons: refresh and configure. 
@@ -101,8 +103,6 @@ It is recommended to use file based configuration for your sessions as opposed t
 
 ### Proxy modes
 In order to trace your website scripts, spy-js has to modify them on the fly. The modification doesn't affect your scripts logic, it's just inserting instrumentation instructions that are reporting back to spy-js UI about what functions have been invoked when your script executes. In order to get a chance to modify your scripts, spy-js has to act as a proxy server that sits between your browser and the website you're tracing. When you open traced website in your browser, spy-js receives script request, requests the script from your website, receives the script, makes required modifications and sends it back to your browser where the script executes and sends runtime information to spy-js UI (via spy-js server).
-
-![spy-js diagram](http://spy-js.com/assets/img/diagram.png)
 
 As you can see from the explanation above, spy-js acts as a proxy server. There are two proxy modes spy-js can work in: system proxy mode and local proxy mode.
 
