@@ -139,7 +139,7 @@ In local proxy mode (as well as in system proxy mode) you can map scripts you tr
 
 Tracing session in spy-js can be configured by clicking "configure" icon at the bottom right corner of the screen. Clicking the icon brings up the configuration code editor. You can use any text editor to open and modify the configuration file code directly from your file system.
 
-![spy-js main UI](http://spy-js.com/assets/img/config.png)
+![spy-js configuration](http://spy-js.com/assets/img/config.png)
 
 Configuration code is just a simple valid JavaScript file.
 ```javascript
