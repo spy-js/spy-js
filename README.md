@@ -41,7 +41,7 @@ In default system proxy mode spy-js has to be configured to be entire system/bro
 
 System proxy mode is not the only mode supported, **if you don't like the idea of changing system/browser proxy settings**, please read [sessions section](#sessions) to see how to use local proxy mode instead.
 
-After starting spy-js server and configuring proxy settings, open the tool UI in browser (UI URL will displayed in console output, by default it's [http://localhost:3546/](http://localhost:3546/)). Windows tray application users should see the UI opening automatically once they start the tray application.
+After starting spy-js server and configuring proxy settings, open the tool UI in browser (UI URL will be displayed in console output, by default it's [http://localhost:3546/](http://localhost:3546/)). Windows tray application users should see the UI opening automatically once they start the tray application.
 
 Click "start session" button in start-up dialog, then open any website you'd like to trace in another browser window.
 
