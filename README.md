@@ -63,7 +63,7 @@ Events of the same type are grouped into visual containers. The header of the co
 ### Stack
 Once some event in the events pane is clicked, its call stack is displayed in the stack pane (in the middle). The stack is represented in the pane by a tree of function calls. 
 
-Each tree node represents invoked function. Node text contains total execution time, script file name and the function name. By hovering your mouse over the information icon, you can see additional function call details, like number of statements and invoked functions, parameter values and return value, occurred exception details if there was one during the function execution.
+Each tree node represents invoked function. Node text contains total execution time, script file name and the function name. By hovering your mouse over the information icon, you can see additional function call details, like the number of statements and invoked functions, parameter values and return value, occurred exception details if there was one during the function execution.
 
 Some tree nodes (functions that called other functions) can be expanded. If the expanded tree node contains too many children (invoked functions), some of them will not be displayed immediately. To see those children, click the link with "X item(s)" text in the desired tree level. Alternatively, hover your mouse over the information icon next to the "X item(s)" link and you will see a brief list of invoked functions without having to expand the node.
 
