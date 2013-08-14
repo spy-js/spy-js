@@ -1,6 +1,7 @@
 # spy-js documentation
 
 The documentation contains:
+* [Overview](#overview)
 * [License](#license)
 * [Installation notes](#installation)
 * [Quick start tutorial](#quick-start-and-tutorial)
@@ -15,6 +16,10 @@ The documentation contains:
 * [Troubleshooting and known issues](#known-issues)
 
 If something described in the documentation doesn't work for you, please check that it's not one of the [known issues](#known-issues). Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
+
+## Overview
+
+In a nutshell, spy-js is a tool for JavaScript developers that allows to simply debug/trace/profile JavaScript on running on differents platforms/browsers/devices. It fills gaps that existing browser development tools have and tackles common development tasks from a different angle.
 
 ![spy-js diagram](http://spy-js.com/assets/img/diagram.png)
 
