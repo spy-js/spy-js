@@ -9,6 +9,8 @@ The documentation contains:
 	+ [Stack](#stack)
 	+ [Code](#code)
 * [Sessions notes](#sessions)
+	+ [Global session](#global-session)
+	+ [File driven session](#file-configured-session)
 	+ [Proxy modes](#proxy-modes)
 * [Configuration documentation](#configuration)
 	+ [Full configuration example](#full-example)
