@@ -14,7 +14,7 @@ The documentation contains:
 	+ [Tips](#configuration-tips)
 * [Troubleshooting and known issues](#known-issues)
 
-If something described in the documentation doesn't work for you, please check that it's not of the [known issues](#known-issues). Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
+If something described in the documentation doesn't work for you, please check that it's not one of the [known issues](#known-issues). Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
 
 ![spy-js diagram](http://spy-js.com/assets/img/diagram.png)
 
