@@ -1,3 +1,7 @@
+## 0.1.7 (August 16, 2013)
+
+Windows 7 and IE related fixes
+
 ## 0.1.6 (August 13, 2013)
 
 - **Major changes:**
