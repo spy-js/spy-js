@@ -50,11 +50,11 @@ System proxy mode is not the only mode supported, **if you don't like the idea o
 
 After starting spy-js server and configuring proxy settings, open the tool UI in browser (UI URL will be displayed in console output, by default it's [http://localhost:3546/](http://localhost:3546/)). Windows tray application users should see the UI opening automatically once they start the tray application.
 
-Click "start session" button in start-up dialog, then open any website you'd like to trace in another browser window.
+Click "start session" button in start-up dialog, then open any website you'd like to trace in another browser window. 
 
 ![spy-js new session](http://spy-js.com/assets/img/session.png)
 
-Perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
+**Do force refesh (ctrl + F5/ctrl + R or command+R) on the traced page**, then perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
 
 The UI contains three resizable main panes - events, stack and code.
 
@@ -371,8 +371,8 @@ It is recommended to save your session configuration file as spy.js (or spy-all.
 
 ## Known issues
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
+* do force refesh (ctrl + F5 or command + R) on the traced page to make sure the traced website scripts are not cached in your browser
 * if you're using system proxy mode, make sure that system/browser proxy settings are using spy-js URL (by default localhost:3546)
-* make sure the traced website scripts are not cached in your browser (clear the cache if required)
 * tracing https secure websites is not supported at the moment
 * tracing HTML pages inline JavaScript is not supported at the moment
 * integrated windows authentication is not supported
