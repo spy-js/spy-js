@@ -52,9 +52,7 @@ After starting spy-js server and configuring proxy settings, open the tool UI in
 
 Click "start session" button in start-up dialog, then open any website you'd like to trace in another browser window. 
 
-![spy-js new session](http://spy-js.com/assets/img/session.png)
-
-**Do force refesh (ctrl + F5/ctrl + R or command+R) on the traced page**, then perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
+**It is important to do force refesh (ctrl + F5/ctrl + R or command+R) on the traced page**, then perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
 
 The UI contains three resizable main panes - events, stack and code.
 
