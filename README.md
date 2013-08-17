@@ -25,7 +25,7 @@ In a nutshell, spy-js is a tool for JavaScript developers that allows to simply 
 
 ![spy-js diagram](http://spy-js.com/assets/img/diagram.png)
 
-You should be able to run a **website you'd like to trace in any browser/platform/device that supports JavaScript**; you should be able to run **spy-js UI in all modern desktop browsers on any platform** (IE9 seems to be working fine as well, but no official support yet).
+You should be able to run a **website you'd like to trace in any browser/platform/device that supports JavaScript**; you should be able to run **spy-js UI in all modern desktop browsers on any platform**.
 
 ## License
 Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE).
