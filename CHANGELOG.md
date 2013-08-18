@@ -1,3 +1,12 @@
+## 0.1.8 (August 18, 2013)
+
+Bug fixes and usability improvements
+* Fixed local proxy issue: when refreshing spy-js UI while having opened traced page with proxy, local proxy won't stop
+* Fixed event instrumenting bug (reproduced when event filter is on), was causing broken events that could not be opened
+* Growl notifications for server and client side errors
+* Server side session data clearing
+* Clear session icon replacement
+
 ## 0.1.7 (August 16, 2013)
 
 Windows 7 and IE related fixes
