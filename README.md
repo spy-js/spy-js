@@ -125,7 +125,7 @@ $.proxy = 3000;
 ```
 It means that if your website is locally hosted at http://localhost:8080/, when you'd like to trace it, you open  http://localhost:3000/. At http://localhost:3000/ you'll see your http://localhost:8080/ website but it will be traced by spy-js. After performing some actions on your website at http://localhost:3000/, you'll be able to inspect captured events using opened spy-js UI (by default it's http://localhost:3546/). At the same time you can browse normal non-traced version of your site at http://localhost:8080/.
 
-As opposed to system proxy mode, local proxy mode has one limitation in what it can trace. In local proxy mode only local scripts can be traced and not CDN referenced ones because external reference requests are not going through the local proxy and cannot be intercepted for the code modification. For example, if on your page you are using locally hosted jQuery version referenced like:
+As opposed to system proxy mode, local proxy mode has one limitation in what it can trace. In local proxy mode only local (and relatively referenced) scripts can be traced and not CDN referenced or absolutely referenced ones because external reference requests are not going through the local proxy and cannot be intercepted for the code modification. For example, if on your page you are using locally hosted jQuery version referenced like:
 ```html
 <script type="text/javascript" src="scripts/libs/jquery-1.9.1.js"></script>
 ```
@@ -133,6 +133,10 @@ then it can be traced (unless you don't want it in which case you can exclude it
 But if you reference the library or any other script from CDN, like:
 ```html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+```
+or like
+```html
+<script src="http://your-domain.com/scripts/libs/jquery.min.js"></script>
 ```
 then it will not be traced.
 
