@@ -52,7 +52,7 @@ System proxy mode is not the only mode supported, **if you don't like the idea o
 
 After starting spy-js server and configuring proxy settings, open the tool UI **in new browser window** (UI URL will be displayed in console output, by default it's [http://localhost:3546/](http://localhost:3546/)). Windows tray application users should see the UI opening automatically once they start the tray application.
 
-Click "start session" button in start-up dialog, then open any website you'd like to trace **in another browser window**. 
+Click "start session" button in start-up dialog, then open any website you'd like to trace **in new browser window**. 
 
 **Do force refesh (ctrl + F5/ctrl + R or command+R) on the traced page**, then perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
 
