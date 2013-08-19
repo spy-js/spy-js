@@ -377,7 +377,7 @@ It is recommended to save your session configuration file as spy.js (or spy-all.
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
 * do force refesh (ctrl + F5 or command + R) on the traced page to make sure the traced website scripts are not cached in your browser
 * if you're using system proxy mode, make sure that system/browser proxy settings are using spy-js URL (by default localhost:3546)
-* tracing scripts without content-type response header is not supported at the moment (use your dev tool to see whether your script has content-type response header)
+* tracing scripts with incorrect (or without) Content-Type response header is not supported. Some dev web servers have incorrect default settings for JavaScript files (use your dev tool to check whether your script has correct Content-Type response header)
 * tracing https secure websites is not supported at the moment
 * tracing HTML pages inline JavaScript is not supported at the moment
 * integrated windows authentication is not supported
