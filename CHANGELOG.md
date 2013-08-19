@@ -1,3 +1,12 @@
+## 0.1.9 (August 20, 2013)
+
+Usability improvements and bug fixes.
+
+* Easy local proxy mode : http://localhost:3546/?spy-js=your-site.com
+* Visual indicator of spy-js on traced page
+* Handling of missing or incorrect Content-Type for javascript files
+* User notification when session is inactive for some time
+
 ## 0.1.8 (August 18, 2013)
 
 Bug fixes and usability improvements
