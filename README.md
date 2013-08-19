@@ -17,7 +17,7 @@ The documentation contains:
 	+ [Tips](#configuration-tips)
 * [Troubleshooting and known issues](#known-issues)
 
-If something described in the documentation doesn't work for you, please check that it's not one of the [known issues](#known-issues). Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
+If something described in the documentation doesn't work for you, please check that it's not one of the **[known issues](#known-issues)**. Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
 
 ## Overview
 
@@ -375,11 +375,11 @@ It is recommended to save your session configuration file as spy.js (or spy-all.
 
 ## Known issues
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
-* do force refesh (ctrl + F5 or command + R) on the traced page to make sure the traced website scripts are not cached in your browser
+* **do force refesh** (ctrl + F5 or command + R) on the traced page to make sure the traced website scripts are not cached in your browser
 * if you're using system proxy mode, make sure that system/browser proxy settings are using spy-js URL (by default localhost:3546)
-* tracing scripts with incorrect (or without) Content-Type response header is not supported. Some dev web servers have incorrect default settings for JavaScript files (use your dev tool to check whether your script has correct Content-Type response header)
-* tracing https secure websites is not supported at the moment
-* tracing HTML pages inline JavaScript is not supported at the moment
+* tracing **scripts with incorrect (or without) Content-Type response header** is not supported. Some dev web servers have incorrect default settings for JavaScript files (use your dev tool to check whether your script has correct Content-Type response header)
+* tracing **https** secure websites is not supported at the moment
+* tracing HTML **pages inline JavaScript** is not supported at the moment
 * integrated windows authentication is not supported
 
 For windows users: avast antivirus may suspect spy-js.exe and run it in a sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, you can just configure proxy settings manually (or script setting them) and run [node spy] from command line.
