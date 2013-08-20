@@ -1,3 +1,16 @@
+## 0.1.10 (August 20, 2013)
+
+Various browsers support improvement
+
+* Firefox issue when all events were marked as external fixed
+* IE9 issue with different events being merged into one event
+* IE8 issue with tracing data chunks order fixed
+* IE8 object dump error fixed
+* IE8 timeouts and intervals implemented
+* IE7 JSON.stringify support
+* Bug with inactive notification showing up too frequenly fixed
+* Version checking script now loads with cache breaker
+
 ## 0.1.9 (August 20, 2013)
 
 Usability improvements and bug fixes
