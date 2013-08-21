@@ -1,3 +1,11 @@
+## 0.1.11 (August 21, 2013)
+
+Stabilizing release
+
+* Local proxy stabilizing 
+* More ES5 tolerant instrumentation
+* Proper support for dumping positive and negative infinity, NaN, undefined
+
 ## 0.1.10 (August 20, 2013)
 
 Various browsers support improvement
