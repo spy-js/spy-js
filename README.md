@@ -148,7 +148,8 @@ or like
 <script src="http://your-domain.com/scripts/libs/jquery.min.js"></script>
 ```
 then it will not be traced.
-There are some other limitations of the local proxy mode that you can hit, for example, during the traced website navigation. The root of the issues is in the fact that the traced website is accessed via spy-js hosted URL.
+
+There are some other limitations of the local proxy mode that you can hit, for example, during the traced website **navigation or CORS related ones**. The root of the issues is in the fact that the traced website is accessed via spy-js hosted URL.
 
 #### Selecting proxy mode
 When choosing between system and local proxy mode, consider the task you need to perform. If you want to learn how some external website works by tracing its pages with potentially lots of CDN references and don't want to bother creating any session configuration files and want to just quickly use global session, then system proxy is your choice. If you trace your locally hosted project in your local dev environment and perhaps have specific session configuration shared across your team and don't want to bother turning on and off system wide proxy settings, then local proxy mode is your choice.
@@ -392,6 +393,7 @@ It is recommended to save your session configuration file as spy.js (or spy-all.
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
 * **do force refesh** (```Ctrl/Command + F5``` or ```Ctrl/Command + R```) on the traced page to make sure the traced website scripts are not cached in your browser
 * if you're using system proxy mode, make sure that system/browser proxy settings are using spy-js URL (by default ```localhost:3546```)
+* if you're using local proxy mode, note that the mode has [some limitations](#local-proxy)
 * tracing **scripts with incorrect (or without) Content-Type response header** is not supported. Some development web servers have default settings with incorrect Content-Type response header (or no Content-Type response header) for JavaScript files. Use your browser dev tools to check whether your script has correct Content-Type response header: ```text/javascript``` or ```application/x-javascript``` or ```application/javascript```.
 * tracing **https** secure websites is not supported at the moment
 * tracing HTML **pages inline JavaScript** is not supported at the moment
