@@ -50,7 +50,7 @@ After starting spy-js server, open the tool UI **in new browser window** (UI URL
 
 Started spy-js server acts as a proxy server. In order to trace your scripts, the proxy server has to capture the traced website requests. There are two options to make it happen:
 * In **system proxy mode** you configure your system to use spy-js server as a proxy. See how to configure proxy settings on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/), [Mac](http://support.apple.com/kb/PH7050), [Ubuntu](http://www.ubuntugeek.com/how-to-configure-ubuntu-desktop-to-use-your-proxy-server.html), [iOS](http://www.allanonymity.com/billing/knowledgebase/11/How-to-configure-proxy-usage-for-iPadorIphone.html), [Android](http://support.tabpilot.com/customer/portal/articles/937845-how-to-set-proxy-server-settings-in-android), [Windows Phone](http://forum.xda-developers.com/showthread.php?t=1106268). Please note that some desktop browsers have their own proxy settings configuration screen. Windows tray application users don't need to do it manually, the tray application can turn on and off system proxy mode (context menu - configure - use system proxy).
-* In **local proxy mode** you use spy-js as a proxy by accessing the traced website via spy-js URL(s). **No special configuration is required**, but the mode has some limitations comparing to the system proxy mode.
+* In **local proxy mode** you use spy-js as a proxy by accessing the traced website via spy-js URL(s). **No system configuration is required**, but the mode has some limitations comparing to the system proxy mode.
 
 For more information about how and when to use the proxy modes, please read [about them in sessions section](#proxy-modes).
 
@@ -149,7 +149,7 @@ or like
 ```
 then it will not be traced.
 
-There are some other limitations of the local proxy mode that you can hit, for example, during the traced website **navigation or CORS related ones**. The root of the issues is in the fact that the traced website is accessed via spy-js hosted URL.
+There are some other limitations of the local proxy mode that you can hit, especially when using it from a global tracing session like ```http://localhost:3546/?spy-js=your-website.com```, for example, during the traced website **navigation or CORS related ones**. The root of the issues is in the fact that the traced website is accessed via spy-js hosted URL.
 
 #### Selecting proxy mode
 When choosing between system and local proxy mode, consider the task you need to perform. If you want to learn how some external website works by tracing its pages with potentially lots of CDN references and don't want to bother creating any session configuration files and want to just quickly use global session, then system proxy is your choice. If you trace your locally hosted project in your local dev environment and perhaps have specific session configuration shared across your team and don't want to bother turning on and off system wide proxy settings, then local proxy mode is your choice.
