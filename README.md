@@ -21,7 +21,7 @@ If something described in the documentation doesn't work for you, please check i
 
 ## Overview
 
-In a nutshell, spy-js is a tool for JavaScript developers that allows to simply debug/trace/profile JavaScript on running on differents platforms/browsers/devices. It fills gaps that existing browser development tools have and tackles common development tasks from a different angle.
+In a nutshell, spy-js is a tool for JavaScript developers that allows to simply debug/trace/profile JavaScript on running on different platforms/browsers/devices. It fills gaps that existing browser development tools have and tackles common development tasks from a different angle.
 
 ![spy-js diagram](http://spy-js.com/assets/img/diagram.png)
 
@@ -42,23 +42,25 @@ Start spy-js by running the command from the folder where you have extracted dow
 ```shell
 node spy
 ```
-Windows users can run spy-js.exe instead, it's a tray application that manages spy-js state and configuration.
+Windows users can run spy-js.exe instead; it's a tray application that manages spy-js state and configuration.
 
 Running the command (or spy-js tray application) will start spy-js HTTP server on port 3546. Use ```-p``` argument (or tray application) to specify different port.
 
-In default system proxy mode spy-js has to be configured to be entire system/browser proxy. Windows tray application users don't need to do this manually, the tray application can turn on and off the system proxy mode (context menu - configure - use system proxy). Other platform users (and windows users not using the tray application for any reason)  need to configure system proxy settings on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/), [Mac](http://support.apple.com/kb/PH7050), [Ubuntu](http://www.ubuntugeek.com/how-to-configure-ubuntu-desktop-to-use-your-proxy-server.html), [iOS](http://www.allanonymity.com/billing/knowledgebase/11/How-to-configure-proxy-usage-for-iPadorIphone.html), [Android](http://support.tabpilot.com/customer/portal/articles/937845-how-to-set-proxy-server-settings-in-android), [Windows Phone](http://forum.xda-developers.com/showthread.php?t=1106268) to use ```localhost:3546``` as a proxy server. 
+After starting spy-js server, open the tool UI **in new browser window** (UI URL will be displayed in console output, by default it's [http://localhost:3546/](http://localhost:3546/)). Windows tray application users should see the UI opening automatically once they start the tray application.
 
-System proxy mode is not the only mode supported, **if you don't like the idea of changing system/browser proxy settings**, please read [sessions section](#sessions) to see how to use local proxy mode instead.
+Started spy-js server acts as a proxy server. In order to trace your scripts, the proxy server has to capture the traced website requests. There are two options to make it happen:
+* In **system proxy mode** you configure your system to use spy-js server as a proxy. See how to configure proxy settings on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/), [Mac](http://support.apple.com/kb/PH7050), [Ubuntu](http://www.ubuntugeek.com/how-to-configure-ubuntu-desktop-to-use-your-proxy-server.html), [iOS](http://www.allanonymity.com/billing/knowledgebase/11/How-to-configure-proxy-usage-for-iPadorIphone.html), [Android](http://support.tabpilot.com/customer/portal/articles/937845-how-to-set-proxy-server-settings-in-android), [Windows Phone](http://forum.xda-developers.com/showthread.php?t=1106268). Please note that some desktop browsers have their own proxy settings configuration screen. Windows tray application users don't need to do it manually, the tray application can turn on and off system proxy mode (context menu - configure - use system proxy).
+* In **local proxy mode** you use spy-js as a proxy by accessing the traced website via spy-js URL(s). **No special configuration is required**, but the mode has some limitations comparing to the system proxy mode.
 
-After starting spy-js server and configuring proxy settings, open the tool UI **in new browser window** (UI URL will be displayed in console output, by default it's [http://localhost:3546/](http://localhost:3546/)). Windows tray application users should see the UI opening automatically once they start the tray application.
+For more information about how and when to use the proxy modes, please read [about them in sessions section](#proxy-modes).
 
-Click "start session" button in start-up dialog, then open any website you'd like to trace **in new browser window**. 
+Click "start session" button in start-up dialog and then open the website you'd like to trace **in new browser window** either by just accessing its URL directly if you're using **system proxy mode** (and have configured your system as described above) or, if you're using **local proxy mode**, by accessing ```http://localhost:3546/?spy-js=your-website.com``` URL. Please note that in local proxy mode [due to its limitations](#local-proxy) you won't be able to trace websites that are using CDNs (or non-relative script references), consider using system proxy mode in this case.
 
-**Do force refesh (```Ctrl/Command + F5``` or ```Ctrl/Command + R```) on the traced page**. You should be able see spy-js logo at the top right corner of the opened page as an indication that spy-js is ready to trace its scripts. The indicator will disappear in a few seconds after the page loads.
+Once you've opened the traced page, you should be able see spy-js logo at the top right corner of the page as an indication that spy-js is ready to trace its scripts. The indicator will disappear in a few seconds after the page loads. **Do force refresh (```Ctrl/Command + F5``` or ```Ctrl/Command + R```) on the traced page** if don't see the indicator.
 
 ![spy-js main UI](http://spy-js.com/assets/img/nodejs.png)
 
-Once the page is loaded, perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occured events.
+Once the page is loaded, perform any actions you'd like to be traced and then have a look into spy-js UI to start inspecting occurred events.
 
 The UI contains three resizable main panes - events, stack and code.
 
@@ -103,7 +105,7 @@ Configure icon click opens current session configuration code editor. See more d
 Tracing in spy-js is session based. When you open spy-js UI, it creates a new session for you. You can open as many websites/sessions as you like while having just a single spy-js server running. Having said that, you can also start multiple spy-js servers on different ports if you need to. Once spy-js UI is opened in a browser of your choice, the first thing you see is new session configuration dialog. 
 
 ### Global session
-You can start global session without specifying any configuration just be clicking "start session" button in the start-up dialog. The session will trace all scripts from proxied traffic using default configuration parameters. In order to work, global session needs spy-js to work in [system proxy mode](#system-proxy) because it has to capture all traffic from all open browsers, hence the name "global".
+You can start global session without specifying any configuration just be clicking "start session" button in the start-up dialog. The session will trace all scripts from proxied traffic using default configuration parameters.
 
 After starting a global session, at any moment you can change its configuration by clicking "configure" icon at the bottom right corner of the screen and modifying [session configuration code](#configuration). Please note that your changes to the global session configuration will only be saved temporarily until your browser window with spy-js UI is refreshed. To use persistent configuration files for your sessions, save your configuration file somewhere and reuse it later by entering or selecting its path on the start-up dialog. Recommended place to save the file is in your project folder, recommended name is spy.js; you can also consider checking it in your VCS to share across your team.
 
@@ -118,10 +120,13 @@ In order to trace your website scripts, spy-js has to modify them on the fly. Th
 As you can see from the explanation above, spy-js acts as a proxy server. There are two proxy modes spy-js can work in: system proxy mode and local proxy mode.
 
 #### System proxy
-In system proxy mode spy-js is configured to be entire system/browser proxy. This way it can capture all traffic and modify all scripts, including CDN references. [Global session](#global-session) can only works in the system proxy mode. To make spy-js work in this mode you'll need to configure browser/network proxy settings to use spy-js URL (defaults: host localhost, port 3546). Windows tray application users don't need to do it manually, the tray application can turn on and off system proxy mode (context menu - configure - use system proxy). See how to configure proxy settings manually on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/), [Mac](http://support.apple.com/kb/PH7050), [Ubuntu](http://www.ubuntugeek.com/how-to-configure-ubuntu-desktop-to-use-your-proxy-server.html), [iOS](http://www.allanonymity.com/billing/knowledgebase/11/How-to-configure-proxy-usage-for-iPadorIphone.html), [Android](http://support.tabpilot.com/customer/portal/articles/937845-how-to-set-proxy-server-settings-in-android), [Windows Phone](http://forum.xda-developers.com/showthread.php?t=1106268). Please note that some desktop browsers have their own proxy settings configuration screen.
+In system proxy mode spy-js is configured to be entire system/browser proxy. This way it can capture all traffic and modify all scripts, including CDN references. To make spy-js work in this mode you'll need to configure browser/network proxy settings to use spy-js URL (defaults: host localhost, port 3546). Windows tray application users don't need to do it manually, the tray application can turn on and off system proxy mode (context menu - configure - use system proxy). See how to configure proxy settings manually on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/), [Mac](http://support.apple.com/kb/PH7050), [Ubuntu](http://www.ubuntugeek.com/how-to-configure-ubuntu-desktop-to-use-your-proxy-server.html), [iOS](http://www.allanonymity.com/billing/knowledgebase/11/How-to-configure-proxy-usage-for-iPadorIphone.html), [Android](http://support.tabpilot.com/customer/portal/articles/937845-how-to-set-proxy-server-settings-in-android), [Windows Phone](http://forum.xda-developers.com/showthread.php?t=1106268). Please note that some desktop browsers have their own proxy settings configuration screen. Windows tray application users don't need to do it manually, the tray application can turn on and off system proxy mode (context menu - configure - use system proxy).
 
 #### Local proxy
-In local proxy mode spy-js doesn't need to change any system settings. Local proxy mode can be enabled for particluar session in [its configuration](#configuration) by simply setting local proxy port:
+In local proxy mode spy-js doesn't need to change any system settings. 
+To use the mode you can either open your website by accessing ```http://localhost:3546/?spy-js=your-website.com``` URL while having a global spy-js session running. 
+
+For a file configured session, you can simply set local proxy port in [the session configuration](#configuration):
 
 ```javascript
 $.root = 'http://localhost:8080/';
@@ -129,7 +134,7 @@ $.proxy = 3000;
 ```
 It means that if your website is locally hosted at ```http://localhost:8080/```, when you'd like to trace it, you open  ```http://localhost:3000/```. At ```http://localhost:3000/``` you'll see your ```http://localhost:8080/``` website but it will be traced by spy-js. After performing some actions on your website at ```http://localhost:3000/```, you'll be able to inspect captured events using opened spy-js UI (by default it's ```http://localhost:3546/```). At the same time you can browse normal non-traced version of your site at ```http://localhost:8080/```.
 
-As opposed to system proxy mode, local proxy mode has one limitation in what it can trace. In local proxy mode only local (and relatively referenced) scripts can be traced and not CDN referenced or absolutely referenced ones because external reference requests are not going through the local proxy and cannot be intercepted for the code modification. For example, if on your page you are using locally hosted jQuery version referenced like:
+As opposed to system proxy mode, local proxy mode has some limitations in what it can trace. In local proxy mode only local (and relatively referenced) scripts can be traced and not CDN referenced or absolutely referenced ones because external reference requests are not going through the local proxy and cannot be intercepted for the code modification. For example, if on your page you are using locally hosted jQuery version referenced like:
 ```html
 <script type="text/javascript" src="scripts/libs/jquery-1.9.1.js"></script>
 ```
@@ -143,9 +148,12 @@ or like
 <script src="http://your-domain.com/scripts/libs/jquery.min.js"></script>
 ```
 then it will not be traced.
+There are some other limitations of the local proxy mode that you can hit, for example, during the traced website navigation. The root of the issues is in the fact that the traced website is accessed via spy-js hosted URL.
 
 #### Selecting proxy mode
 When choosing between system and local proxy mode, consider the task you need to perform. If you want to learn how some external website works by tracing its pages with potentially lots of CDN references and don't want to bother creating any session configuration files and want to just quickly use global session, then system proxy is your choice. If you trace your locally hosted project in your local dev environment and perhaps have specific session configuration shared across your team and don't want to bother turning on and off system wide proxy settings, then local proxy mode is your choice.
+
+*In a nutshell, system proxy mode is more powerful in terms that it has no limitations it what it can capture, but it requires additional configuration.*
 
 #### Mapping to local files
 In local proxy mode (as well as in system proxy mode) you can map scripts you trace to local files. It may be handy when you're in development phase and are actively changing your scripts and tracing them at the same time. Normally spy-js instruments and caches modified code in the session cache, but when dealing with locally mapped files spy-js will be watching them for changes, re-instrumenting changed ones and updating the cache. See [configuration section](#configuration) for more details on how to do this. 
@@ -384,7 +392,7 @@ It is recommended to save your session configuration file as spy.js (or spy-all.
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
 * **do force refesh** (```Ctrl/Command + F5``` or ```Ctrl/Command + R```) on the traced page to make sure the traced website scripts are not cached in your browser
 * if you're using system proxy mode, make sure that system/browser proxy settings are using spy-js URL (by default ```localhost:3546```)
-* tracing **scripts with incorrect (or without) Content-Type response header** is not supported. Some development web servers have default settings witt incorrect Content-Type response header (or no Content-Type response header) for JavaScript files. Use your browser dev tools to check whether your script has correct Content-Type response header: ```text/javascript``` or ```application/x-javascript``` or ```application/javascript```.
+* tracing **scripts with incorrect (or without) Content-Type response header** is not supported. Some development web servers have default settings with incorrect Content-Type response header (or no Content-Type response header) for JavaScript files. Use your browser dev tools to check whether your script has correct Content-Type response header: ```text/javascript``` or ```application/x-javascript``` or ```application/javascript```.
 * tracing **https** secure websites is not supported at the moment
 * tracing HTML **pages inline JavaScript** is not supported at the moment
 * integrated windows authentication is not supported
