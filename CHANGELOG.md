@@ -1,3 +1,7 @@
+## 0.2.0 (August 22, 2013)
+
+Stabilization, a lot of memory leaks fixed, few small bugs fixed
+
 ## 0.1.11 (August 21, 2013)
 
 Stabilizing release
