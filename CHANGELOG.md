@@ -1,3 +1,7 @@
+## 0.2.1 (August 26, 2013)
+
+[Bug fixing](https://github.com/spy-js/spy-js/issues?milestone=4)
+
 ## 0.2.0 (August 22, 2013)
 
 Stabilization, a lot of memory leaks fixed, few small bugs fixed
