@@ -1,6 +1,6 @@
 ## 0.2.1 (August 26, 2013)
 
-[Bug fixing](https://github.com/spy-js/spy-js/issues?milestone=4)
+[Bug fixing](https://github.com/spy-js/spy-js/issues?milestone=4&state=closed)
 
 ## 0.2.0 (August 22, 2013)
 
