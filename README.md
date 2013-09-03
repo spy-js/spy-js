@@ -236,7 +236,7 @@ Configuration object should have following structure:
 }
 ```
 
-**local** property specifies whether spy-js should map the URL to local file, track the local file changes and re-instrument it when the file changes. By default, spy-js instruments all scripts just once and caches them, but if the local file mapping is created, spy-js will update the cache when required. 
+**```local```** property specifies whether spy-js should map the URL to local file, track the local file changes and re-instrument it when the file changes. By default, spy-js instruments all scripts just once and caches them, but if the local file mapping is created, spy-js will update the cache when required. 
 
 The property can either specify a path to the local file, or just have a true value, in which case the local file will be automatically discovered as follows: ```$.local``` will be used as a local root along with current URL path (relative to ```$.root```). For example, if we have following configuration:
 ```javascript
