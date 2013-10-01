@@ -1,3 +1,5 @@
+*Some big news about the tool future will be announced in a couple of weeks, stay tuned.*
+
 # spy-js documentation
 
 The documentation contains:
