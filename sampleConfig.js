@@ -13,7 +13,7 @@ module.exports = function($) {
   // $.proxy = 3000;
 
   // in mapper function you can configure whether to trace certain scripts and how
-  // by returning configration object for the script(s) URL
+  // by returning configuration object for the script(s) URL
   $.mapper = function(url) {
     
     // no tracing for files that contain jquery in their names (jquery and plugins)
@@ -30,10 +30,10 @@ module.exports = function($) {
     //    set objectDump property to false for scripts where you don't need to trace function params and return values
     //    set minimum necessary limits inside objectDump property for scripts where need to trace function params and return values
 
-    // Following configration means that the rest of scripts are traced,
+    // Following configuration means that the rest of scripts are traced,
     // prettified,
     // function params and return values collected 
-    // (object depth: 1 level, maximimum 3 properties or array elements, strings are truncated if more than 50 chars)
+    // (object depth: 1 level, maximum 3 properties or array elements, strings are truncated if more than 50 chars)
     return {
       url: url,
       local: '',
