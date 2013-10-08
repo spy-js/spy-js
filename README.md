@@ -1,4 +1,10 @@
-*Some big news about the tool future will be announced in a couple of weeks, stay tuned.*
+# spy-js future
+
+I have some great news to share about spy-js future.
+
+The project has only been released a few weeks ago, but already has got some interest from the community. Today I'm happy to announce that JetBrains, one of the world's leading providers of developer tools, is acquiring the project and I'm joining JetBrains team to work on spy-js and make it a part of JetBrains IDEs. 
+
+I'm very excited about our partnership and the tool future. I strongly believe that spy-js, integrated into JetBrains product line, will faster achieve its goal to make JavaScript tooling better and will certainly help developers to be more productive.
 
 # spy-js documentation
 
