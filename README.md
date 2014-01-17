@@ -41,11 +41,15 @@ Documentation and code samples in this repository are [licensed under MIT](https
 spy-js tool itself isn’t open source, but I intend to keep it free while I collect beta feedback. Please refer to the tool EULA and [this article](http://spy-js.com/why.html) for more details. 
 
 ## Installation
-Install node.js v0.8 or newer from [nodejs website](http://nodejs.org).
 
-Download latest version from [spy-js website](http://spy-js.com) and extract it from downloaded archive.
+To use WebStorm integration of spy-js: install latest WebStorm version.
+
+To use web UI version: install node.js v0.10.24 or newer from [nodejs website](http://nodejs.org), download latest version from [spy-js website](http://spy-js.com) and extract it from downloaded archive.
 
 ## Quick start and tutorial
+
+**Following tutorial is for spy-js web UI version, to use WebStorm integration of spy-js follow the instructions in [the blog post](http://blog.jetbrains.com/webstorm/2014/01/webstorm-8-eap/).**
+
 Start spy-js by running the command from the folder where you have extracted downloaded archive to:
 ```shell
 node spy
@@ -164,7 +168,10 @@ When choosing between system and local proxy mode, consider the task you need to
 
 *In a nutshell, system proxy mode is more powerful in terms that it has no limitations it what it can capture, but it requires additional configuration.*
 
-#### Mapping to local files
+#### Mapping to local files 
+
+**(skip this section if you're using WebStorm integration, as the IDE automaticall maps local project files for you)**
+
 In local proxy mode (as well as in system proxy mode) you can map scripts you trace to local files. It may be handy when you're in development phase and are actively changing your scripts and tracing them at the same time. Normally spy-js instruments and caches modified code in the session cache, but when dealing with locally mapped files spy-js will be watching them for changes, re-instrumenting changed ones and updating the cache. See [configuration section](#configuration) for more details on how to do this. 
 
 ## Configuration
@@ -207,7 +214,7 @@ $.proxy = 3003;
 ```
 will leave ```http://localhost:3002/``` available as it is, and host traced version of ```http://localhost:3002/``` at ```http://localhost:3003/```. ```http://localhost:3003/``` should be opened and used along with spy-js UI to trace events.
 
-##### local (optional)
+##### local (optional, is NOT required in WebStorm integration)
 Local project root is used to map scripts to local files so that spy-js can monitor those file changes and update instrumented code. Local project root is used by ```$.mapper``` for URLs that specify "local" property.
 ```javascript
 $.local = 'c:\\myproject\\scripts\\';
@@ -222,6 +229,8 @@ Configuration object should have following structure:
 ```javascript
 // configuration object
 {
+        // local property is NOT required in WebStorm integration, 
+        // as the IDE automatically tracks local project files for you 
 	local: true | false | string (path) | not set or empty string (default),
 	instrument: true (default instrumentation settings used) 
 		    | false (script will not be traced) 
@@ -244,7 +253,7 @@ Configuration object should have following structure:
 }
 ```
 
-**```local```** property specifies whether spy-js should map the URL to local file, track the local file changes and re-instrument it when the file changes. By default, spy-js instruments all scripts just once and caches them, but if the local file mapping is created, spy-js will update the cache when required. 
+**```local```** (**local property is NOT required if you're using WebStorm integration, as the IDE automatically tracks local project files for you**) property specifies whether spy-js should map the URL to local file, track the local file changes and re-instrument it when the file changes. By default, spy-js instruments all scripts just once and caches them, but if the local file mapping is created, spy-js will update the cache when required. 
 
 The property can either specify a path to the local file, or just have a true value, in which case the local file will be automatically discovered as follows: ```$.local``` will be used as a local root along with current URL path (relative to ```$.root```). For example, if we have following configuration:
 ```javascript
@@ -342,6 +351,8 @@ module.exports = function ($) {
 
   $.proxy = 3004;
 
+  // local property is NOT required when using WebStorm integration, 
+  // as the IDE automatically tracks local project files for you 
   $.local = 'c:\\myproject\\';
 
   $.mapper = function (url) {
@@ -361,6 +372,8 @@ module.exports = function ($) {
     }
 
     return {
+      // local property is NOT required when using WebStorm integration, 
+      // as the IDE automatically tracks local project files for you 
       local: true,
       instrument: {
         prettify: false,
@@ -384,7 +397,11 @@ module.exports = function ($) {
 ```
 The sample assumes that you have a locally hosted web project at ```http://localhost:3002/```. To trace it you'll need to open the project at ```http://localhost:3004/```, you are still able to browse non-traced version at ```http://localhost:3002/```.
 
-Mapper above is configured not to trace jQuery (or any jQuery plugins or related scripts if they have "jquery" string in their URL). It is also configured to trace minified underscore library, prettify it, but not collect any runtime data from it. For the rest of the scripts the mapper maps them to local files using ```c:\\myproject\\``` root plus whatever the script path relative to ```http://localhost:3002/```, not prettifying them because these are local scripts that are formatted nicely anyway and constraining object dumps to reasonably low limits to avoid any performance issues on the traced website (traversing objects and sending dumps across the wire does take additional time). 
+Mapper above is configured not to trace jQuery (or any jQuery plugins or related scripts if they have "jquery" string in their URL). It is also configured to trace minified underscore library, prettify it, but not collect any runtime data from it. 
+
+**(skip this paragraph if you're using WebStorm integration)** For the rest of the scripts the mapper maps them to local files using ```c:\\myproject\\``` root plus whatever the script path relative to ```http://localhost:3002/```. 
+
+Mapper is not prettifying them because these are local scripts that are formatted nicely anyway and constraining object dumps to reasonably low limits to avoid any performance issues on the traced website (traversing objects and sending dumps across the wire does take additional time). 
 
 When tracing the website, according to the specified event filter we'll only see the code executed by timeouts, intervals and click events.
 
