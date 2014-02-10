@@ -1,10 +1,6 @@
-# spy-js future
+# spy-js update
 
-I have some great news to share about spy-js future.
-
-The project has only been released a few weeks ago, but already has got some interest from the community. Today I'm happy to announce that JetBrains, one of the world's leading providers of developer tools, is acquiring the project and I'm joining JetBrains team to work on spy-js and make it a part of JetBrains IDEs. 
-
-I'm very excited about our partnership and the tool future. I strongly believe that spy-js, integrated into JetBrains product line, will faster achieve its goal to make JavaScript tooling better and will certainly help developers to be more productive.
+The project now is a part of WebStorm IDE.
 
 # spy-js documentation
 
@@ -423,5 +419,6 @@ If spy-js tracing doesn't work for you (and console output or log file doesn't c
 * tracing **https** secure websites is not supported at the moment
 * tracing HTML **pages inline JavaScript** is not supported at the moment
 * integrated windows authentication is not supported
+* execution time figures include the time required to trace the code and thus may significantly differ from the real figures; use target browser built-in profiler tools for precise figures critical stuff like renderring optimization 
 
 For windows users: avast antivirus may suspect spy-js.exe and run it in a sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, you can just configure proxy settings manually (or script setting them) and run ```node spy``` from command line.
