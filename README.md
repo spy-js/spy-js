@@ -419,6 +419,6 @@ If spy-js tracing doesn't work for you (and console output or log file doesn't c
 * tracing **https** secure websites is not supported at the moment
 * tracing HTML **pages inline JavaScript** is not supported at the moment
 * integrated windows authentication is not supported
-* (followong doesn't apply to the WebStorm version, only web UI): execution time figures include the time required to trace the code and thus may significantly differ from the real figures; use target browser built-in profiler tools for precise figures critical stuff like renderring optimization 
+* (following applies to the WebStorm version to much less extent than to web UI): execution time figures display the time required to execute modified code and thus may significantly differ from the real figures; use target browser built-in profiler tools for precise figures critical stuff like renderring optimization 
 
 For windows users: avast antivirus may suspect spy-js.exe and run it in a sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, you can just configure proxy settings manually (or script setting them) and run ```node spy``` from command line.
