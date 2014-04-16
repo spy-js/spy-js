@@ -44,7 +44,7 @@ To use web UI version: install node.js v0.10.24 or newer from [nodejs website](h
 
 ## Quick start and tutorial
 
-**Following tutorial is for spy-js web UI version, to use WebStorm integration of spy-js follow the instructions in [the blog post](http://blog.jetbrains.com/webstorm/2014/02/webstorm-8-eap-build-134-1081/).**
+**Following tutorial is for spy-js web UI version, to use WebStorm integration of spy-js follow the instructions in [the blog post](http://blog.jetbrains.com/webstorm/2014/04/spy-js-webstorm-secret-service/).**
 
 Start spy-js by running the command from the folder where you have extracted downloaded archive to:
 ```shell
