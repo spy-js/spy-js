@@ -19,6 +19,7 @@ The documentation contains:
 * [Configuration documentation](#configuration)
 	+ [Full configuration example](#full-example)
 	+ [Tips](#configuration-tips)
+* [Development proxy (like Fiddler or Charles proxy) configiration](#development-proxy-configuration)
 * [Troubleshooting and known issues](#known-issues)
 
 If something described in the documentation doesn't work for you, please check if it's one of the **[known issues](#known-issues)**. Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
@@ -409,6 +410,23 @@ When tracing the website, according to the specified event filter we'll only see
 * whitelist/blacklist events you would like/would not like to see by using event filter setting
 
 It is recommended to save your session configuration file as spy.js (or spy-all.js/spy-nolibs.js etc.) in your project folder and commit/check in your VCS system so the configuration could be shared across your project team.
+
+## Development proxy configuration
+If you're using development proxy for instance to map minified files and replace them with local development versions, it is still possible to use spy-js to instrument and trace those development versions of JavaScript files.
+
+In the example below it's illustrated how to make Fiddler work with spy-js in WebStorm. The idea is to request your non-minified files via spy-js proxy server using local proxy mode URLs. In the example I'll replace minified sh\_javascript.min.js file from nodejs.org with my version sh\_javascript.js using Fiddler and will trace sh_javascript.js execution using spy-js.
+
+Create a new spy-js run configuration, uncheck "Automatically configure system proxy" checkbox.
+![screen shot 2014-06-26 at 12 59 01 pm](https://cloud.githubusercontent.com/assets/979966/3394356/017203be-fcde-11e3-8cda-55b56c4ceed2.png)
+
+Configure AutoResponder in Fiddler as follows:
+![screen shot 2014-06-26 at 2 01 26 pm](https://cloud.githubusercontent.com/assets/979966/3394639/ab84fffc-fce6-11e3-8130-db2817c34e95.png)
+
+Start Fiddler and spy-js run configuration (the order doesn't matter), access the page in browser and see it traced in WebStorm.
+
+Note that localhost:3546 is spy-js trace server launched by WebStorm, localhost:8080 is an address where your local non-minified files are hosted. I have used static [http-server](https://www.npmjs.org/package/http-server) to host them, but you can use any web server.
+
+First AutoResponder rule uses a regular expression to replace all files like file.min.js with corresponding file.js, last two rules are mandatory to make spy-js work on the page.
 
 ## Known issues
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
