@@ -1,6 +1,6 @@
 # spy-js availability
 
-The project now is a part of IntelliJ product line, spy-js is bundled with WebStorm and IndelliJ IDEA Ultimate Edition and available as a [free downloadable plugin](http://plugins.jetbrains.com/plugin/7417) for PhpStorm, RubyMine and PyCharm Professional Edition.
+The project now is a part of IntelliJ product line, spy-js is bundled with WebStorm and IndelliJ IDEA Ultimate Edition and available as a [free downloadable plugin](http://plugins.jetbrains.com/plugin/7417) for PhpStorm, RubyMine and PyCharm Professional Edition. You can watch 7 min [screencast here](http://www.youtube.com/watch?v=vPIbwxzC5cU).
 
 # spy-js documentation
 
