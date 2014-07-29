@@ -20,6 +20,8 @@ The documentation contains:
 	+ [Full configuration example](#full-example)
 	+ [Tips](#configuration-tips)
 * [Development proxy (like Fiddler or Charles proxy) configiration](#development-proxy-configuration)
+* [Mobile device proxy configuration](#mobile-device-configuration)
+* [Virtual machine configuration](#virtual-machine-configuration)
 * [Troubleshooting and known issues](#known-issues)
 
 If something described in the documentation doesn't work for you, please check if it's one of the **[known issues](#known-issues)**. Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
@@ -412,7 +414,7 @@ When tracing the website, according to the specified event filter we'll only see
 It is recommended to save your session configuration file as spy.js (or spy-all.js/spy-nolibs.js etc.) in your project folder and commit/check in your VCS system so the configuration could be shared across your project team.
 
 ## Development proxy configuration
-If you're using development proxy for instance to map minified files and replace them with local development versions, it is still possible to use spy-js to instrument and trace those development versions of JavaScript files.
+If you're using development proxy, for instance to map minified files and replace them with local development versions, it is still possible to use spy-js to instrument and trace those development versions of JavaScript files.
 
 In the example below it's illustrated how to make Fiddler work with spy-js in WebStorm. The idea is to request your non-minified files via spy-js proxy server using local proxy mode URLs. In the example I'll replace minified sh\_javascript.min.js file from nodejs.org with my version sh\_javascript.js using Fiddler and will trace sh_javascript.js execution using spy-js.
 
@@ -427,6 +429,27 @@ Start Fiddler and spy-js run configuration (the order doesn't matter), access th
 Note that localhost:3546 is spy-js trace server launched by WebStorm, localhost:8080 is an address where your local non-minified files are hosted. I have used static [http-server](https://www.npmjs.org/package/http-server) to host them, but you can use any web server.
 
 First AutoResponder rule uses a regular expression to replace all files like file.min.js with corresponding file.js, last two rules are mandatory to make spy-js work on the page.
+
+## Mobile device configuration
+See configuration example for iOS in [spy-js WebStorm blog post](http://blog.jetbrains.com/webstorm/2014/04/spy-js-webstorm-secret-service/#mobile)
+
+## Virtual machine configuration
+
+If you are using virtual machine, for instance you have a develepment machine with Mac and WebStorm spy-js installed and hosting Windows VM via Virtual Box on it, it is possible to use spy-js to trace web sites opened inside IE (or another browser) on the VM instance and view the trace in your WebStorm.
+
+First, create and start spy-js run configuration in WebStorm on your development machine. You can use default trace server port (3546), leave "URL to trace" field empty and do not check "Automatically configure system proxy" checkbox (because the proxy configuration is not required on your development machine, it's required on the VM and will be performed manually).
+
+Second, you need to configure your VM system proxy, for example see how to do it on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/). The settings you'll need to specify are: 
+* 10.0.2.2 for the proxy address (or whatever the IP address is to access your development machine from VM)
+* spy-js run configuration trace server port for the port (3546, if you didn't change it)
+* uncheck "Bypass proxy server for local addresses" setting
+* go to "Advanced" settings and add <-loopback> string to the exceptions field down the bottom
+
+Now you can open any external website, like http://nodejs.org, in any browser on your VM and make sure it is being traced in WebStorm running on your development machine.
+
+When you are tracing local sites (hosted on your development machine), and when you're trying to trace them they hang, you may need to access them by dev machine name instead of IP address. Please note that WebStorm built-in server doesn't support named access, so you may need to install and use some other development web server for this task, for example  static [http-server](https://www.npmjs.org/package/http-server).
+
+To sum it up, if you have installed http-server (npm install http-server -g) and started it (by running http-server inside your application folder) using it's default port 8080, started described spy-js run configuration on your development machine (for instance named dev-box), configured your VM as described, opened a browser on the VM and accessed http://dev-box:8080, you should be able to see the the trace in your running WebStorm instance on your development machine.
 
 ## Known issues
 If spy-js tracing doesn't work for you (and console output or log file doesn't contain any explanation): 
