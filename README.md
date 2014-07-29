@@ -440,7 +440,7 @@ If you are using virtual machine, for instance you have a develepment machine wi
 First, create and start spy-js run configuration in WebStorm on your development machine. You can use default trace server port (3546), leave "URL to trace" field empty and do not check "Automatically configure system proxy" checkbox (because the proxy configuration is not required on your development machine, it's required on the VM and will be performed manually).
 
 Second, you need to configure your VM system proxy, for example see how to do it on [Windows](http://answers.oreilly.com/topic/675-how-to-configure-proxy-settings-in-windows-7/). The settings you'll need to specify are: 
-* 10.0.2.2 for the proxy address (or whatever the IP address is to access your development machine from VM)
+* IP address of your development machine for the address (avoid using fake 10.0.2.2 IP address)
 * spy-js run configuration trace server port for the port (3546, if you didn't change it)
 * uncheck "Bypass proxy server for local addresses" setting
 * go to "Advanced" settings and add <-loopback> string to the exceptions field down the bottom
