@@ -447,7 +447,7 @@ Second, you need to configure your VM system proxy, for example see how to do it
 
 Now you can open any external website, like http://nodejs.org, in any browser on your VM and make sure it is being traced in WebStorm running on your development machine.
 
-When you are tracing local sites (hosted on your development machine), and when you're trying to trace them they hang, you may need to access them by dev machine name instead of IP address. Please note that WebStorm built-in server doesn't support named access, so you may need to install and use some other development web server for this task, for example  static [http-server](https://www.npmjs.org/package/http-server).
+When you are tracing local sites (hosted on your development machine), and when you're trying to trace them they hang, you may need to access them by dev machine name or dev machine proper network IP address (instead of fake 10.0.2.2 IP address). Please note that WebStorm built-in HTTP server doesn't support such access, so you may need to install and use some other development web server for this task, for example  static [http-server](https://www.npmjs.org/package/http-server).
 
 To sum it up, if you have installed http-server (npm install http-server -g) and started it (by running http-server inside your application folder) using it's default port 8080, started described spy-js run configuration on your development machine (for instance named dev-box), configured your VM as described, opened a browser on the VM and accessed http://dev-box:8080, you should be able to see the the trace in your running WebStorm instance on your development machine.
 
