@@ -23,6 +23,7 @@ The documentation contains:
 * [Configuration documentation](#configuration)
 	+ [Full configuration example](#full-example)
 	+ [Tips](#configuration-tips)
+* [PhantomJs](#phantomjs)
 * [Development proxy (like Fiddler or Charles proxy) configiration](#development-proxy-configuration)
 * [Mobile device proxy configuration](#mobile-device-configuration)
 * [Virtual machine configuration](#virtual-machine-configuration)
@@ -416,6 +417,23 @@ When tracing the website, according to the specified event filter we'll only see
 * whitelist/blacklist events you would like/would not like to see by using event filter setting
 
 It is recommended to save your session configuration file as spy.js (or spy-all.js/spy-nolibs.js etc.) in your project folder and commit/check in your VCS system so the configuration could be shared across your project team.
+
+## PhantomJs
+
+PhantomJS is a headless WebKit, so simple spy-js configuration is sufficient to trace web pages loaded by it.
+
+Please note, that because of [PhantomJs limitation](https://github.com/ariya/phantomjs/issues/11342), when you'd like to trace localhost, you should use your machine name instead.
+
+In the example below I'll illustrate how to use spy-js to trace Jasmine tests running by PhantomJs from Grunt (using WebStorm Grunt console).
+
+Create a new spy-js run configuration as on the screenshot below. Start the configuration.
+![screen shot 2014-08-14 at 3 57 14 pm](https://cloud.githubusercontent.com/assets/979966/3916325/7a319560-2378-11e4-9ef0-2a7c4d68d036.png)
+
+Create Gruntfile.js and Jasmine spec as illustrated below. Note that machine name used as a host and host name. Run default grunt task.
+![screen shot 2014-08-14 at 4 14 55 pm](https://cloud.githubusercontent.com/assets/979966/3916427/6546af9e-237a-11e4-8a44-74c0def98304.png)
+
+Switch to spy-js tool window to work with the trace.
+![screen shot 2014-08-14 at 4 25 45 pm](https://cloud.githubusercontent.com/assets/979966/3916504/f9682828-237b-11e4-90f2-4e702294a703.png)
 
 ## Development proxy configuration
 If you're using development proxy, for instance to map minified files and replace them with local development versions, it is still possible to use spy-js to instrument and trace those development versions of JavaScript files.
