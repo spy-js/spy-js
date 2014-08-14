@@ -433,7 +433,7 @@ Create Gruntfile.js and Jasmine spec as illustrated below. Note that machine nam
 ![screen shot 2014-08-14 at 4 14 55 pm](https://cloud.githubusercontent.com/assets/979966/3916427/6546af9e-237a-11e4-8a44-74c0def98304.png)
 
 Switch to spy-js tool window to work with the trace.
-![screen shot 2014-08-14 at 4 25 45 pm](https://cloud.githubusercontent.com/assets/979966/3916504/f9682828-237b-11e4-90f2-4e702294a703.png)
+![screen shot 2014-08-14 at 4 47 46 pm](https://cloud.githubusercontent.com/assets/979966/3916720/a721ec30-237f-11e4-9a8a-6bc364db3a60.png)
 
 I'm also using following capture exclusion to avoid noise from jasmine task generated files.
 ![screen shot 2014-08-14 at 4 38 40 pm](https://cloud.githubusercontent.com/assets/979966/3916625/c3b30584-237d-11e4-9df3-9bdf5afe26ce.png)
