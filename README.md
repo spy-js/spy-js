@@ -1,6 +1,6 @@
 # spy-js for node.js
 
-Spy-js now supports tracing/debugging/profiling node.js code, check out [WebStorm blog for more details](http://blog.jetbrains.com/webstorm/2014/08/webstorm-9-eap/).
+Spy-js now supports tracing/debugging/profiling node.js code, check out [WebStorm blog for more details](http://blog.jetbrains.com/webstorm/2014/08/tracing-debugging-and-profiling-node-js-with-spy-js/).
 
 # spy-js availability
 
