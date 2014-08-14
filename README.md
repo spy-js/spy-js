@@ -427,7 +427,7 @@ Please note, that because of [PhantomJs limitation](https://github.com/ariya/pha
 In the example below I'll illustrate how to use spy-js to trace Jasmine tests running by PhantomJs from Grunt (using WebStorm Grunt console).
 
 Create a new spy-js run configuration as on the screenshot below. Start the configuration.
-![screen shot 2014-08-14 at 3 57 14 pm](https://cloud.githubusercontent.com/assets/979966/3916325/7a319560-2378-11e4-9ef0-2a7c4d68d036.png)
+![screen shot 2014-08-14 at 3 57 14 pm](https://cloud.githubusercontent.com/assets/979966/3916635/f40a2082-237d-11e4-9884-232294c6b208.png)
 
 Create Gruntfile.js and Jasmine spec as illustrated below. Note that machine name used as a host and host name. Run default grunt task.
 ![screen shot 2014-08-14 at 4 14 55 pm](https://cloud.githubusercontent.com/assets/979966/3916427/6546af9e-237a-11e4-8a44-74c0def98304.png)
@@ -435,8 +435,8 @@ Create Gruntfile.js and Jasmine spec as illustrated below. Note that machine nam
 Switch to spy-js tool window to work with the trace.
 ![screen shot 2014-08-14 at 4 25 45 pm](https://cloud.githubusercontent.com/assets/979966/3916504/f9682828-237b-11e4-90f2-4e702294a703.png)
 
-Please note that I'm using following capture exclusion to avoid noise from jasmine task generated files.
-![screen shot 2014-08-14 at 4 35 59 pm](https://cloud.githubusercontent.com/assets/979966/3916601/57177680-237d-11e4-8197-26959c973d1a.png)
+I'm also using following capture exclusion to avoid noise from jasmine task generated files.
+![screen shot 2014-08-14 at 4 38 40 pm](https://cloud.githubusercontent.com/assets/979966/3916625/c3b30584-237d-11e4-9df3-9bdf5afe26ce.png)
 
 
 ## Development proxy configuration
