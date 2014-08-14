@@ -1,11 +1,8 @@
 // Configuration file sample
 module.exports = function($) {
   
-  // trace name
-  $.name = 'knockout mvc sample';
-
-  // URL to trace
-  $.root = 'http://todomvc.com/architecture-examples/knockoutjs/';
+  // URL to trace (optional)
+  // $.root = 'http://todomvc.com/architecture-examples/knockoutjs/';
   
   // Local proxy port, if used 
   // traced version of http://todomvc.com/architecture-examples/knockoutjs/ 
@@ -35,8 +32,6 @@ module.exports = function($) {
     // function params and return values collected 
     // (object depth: 1 level, maximum 3 properties or array elements, strings are truncated if more than 50 chars)
     return {
-      url: url,
-      local: '',
       instrument: {
         prettify: true,
         objectDump: {
