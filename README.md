@@ -435,6 +435,10 @@ Create Gruntfile.js and Jasmine spec as illustrated below. Note that machine nam
 Switch to spy-js tool window to work with the trace.
 ![screen shot 2014-08-14 at 4 25 45 pm](https://cloud.githubusercontent.com/assets/979966/3916504/f9682828-237b-11e4-90f2-4e702294a703.png)
 
+Please note that I'm using following capture exclusion to avoid noise from jasmine task generated files.
+![screen shot 2014-08-14 at 4 35 59 pm](https://cloud.githubusercontent.com/assets/979966/3916601/57177680-237d-11e4-8197-26959c973d1a.png)
+
+
 ## Development proxy configuration
 If you're using development proxy, for instance to map minified files and replace them with local development versions, it is still possible to use spy-js to instrument and trace those development versions of JavaScript files.
 
