@@ -40,13 +40,11 @@ In a nutshell, spy-js is a tool for JavaScript developers that allows to simply 
 You should be able to run a **website you'd like to trace in any browser/platform/device that supports JavaScript**; you should be able to run **spy-js UI in all modern desktop browsers on any platform**.
 
 ## License
-Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE).
-
-spy-js tool itself isn’t open source, but I intend to keep it free while I collect beta feedback. Please refer to the tool EULA and [this article](http://spy-js.com/why.html) for more details. 
+Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE). Spy-js tool itself isn’t open source.
 
 ## Installation
 
-To use WebStorm integration of spy-js: install latest WebStorm version.
+To use WebStorm integration of spy-js: install latest WebStorm version. Please note that the WebStorm version is stable, production ready and constantly improving, while the web UI version is more like a preview and not maintained at the moment.
 
 To use web UI version: install node.js v0.10.24 or newer from [nodejs website](http://nodejs.org), download latest version from [spy-js website](http://spy-js.com) and extract it from downloaded archive.
 
@@ -486,6 +484,6 @@ If spy-js tracing doesn't work for you (and console output or log file doesn't c
 * tracing **https** secure websites is not supported at the moment
 * tracing HTML **pages inline JavaScript** is not supported at the moment
 * integrated windows authentication is not supported
-* (following applies to the WebStorm version to much less extent than to web UI): execution time figures display the time required to execute modified code and thus may significantly differ from the real figures; use target browser built-in profiler tools for precise figures critical stuff like renderring optimization 
+* execution time figures display the time required to execute *modified code* and thus may significantly differ from the real figures; relatively to other spy-js collected performance metrics they make sense and may be used to identify and fix bottlenecks etc.; use target browser built-in profiler tools/v8 tools for node.js for precise figures
 
 For windows users: avast antivirus may suspect spy-js.exe and run it in a sandbox that sometimes causes proxy settings not being reset back after exiting spy-js.exe first time, this issue will be fixed in future. Technically spy-js.exe is just a convenience utility and is not required to run spy-js, so if you have any issues with it, you can just configure proxy settings manually (or script setting them) and run ```node spy``` from command line.
