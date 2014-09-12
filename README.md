@@ -24,6 +24,7 @@ The documentation contains:
 	+ [Full configuration example](#full-example)
 	+ [Tips](#configuration-tips)
 * [PhantomJs](#phantomjs)
+* [Karma Runner] (#karma-runner)
 * [Development proxy (like Fiddler or Charles proxy) configiration](#development-proxy-configuration)
 * [Mobile device proxy configuration](#mobile-device-configuration)
 * [Virtual machine configuration](#virtual-machine-configuration)
@@ -436,6 +437,27 @@ Switch to spy-js tool window to work with the trace.
 I'm also using following capture exclusion to avoid noise from jasmine task generated files.
 ![screen shot 2014-08-14 at 4 38 40 pm](https://cloud.githubusercontent.com/assets/979966/3916625/c3b30584-237d-11e4-9df3-9bdf5afe26ce.png)
 
+## Karma Runner
+
+In the example below I'll illustrate how to use spy-js to trace Jasmine tests running from Karma runner in Chrome and PhantomJs.
+
+Create a new spy-js run configuration as on the screenshot below. Start the configuration.
+![screen shot 2014-08-14 at 3 57 14 pm](https://cloud.githubusercontent.com/assets/979966/3916635/f40a2082-237d-11e4-9884-232294c6b208.png)
+
+Create karma.conf.js and Jasmine spec as illustrated below. Note that machine name used as a host name in order for PhantomJs to work.
+![screen shot 2014-09-11 at 6 48 20 pm](https://cloud.githubusercontent.com/assets/979966/4244781/c8f799cc-3a27-11e4-8341-d32542d0ccf4.png)
+
+Create and launch karma run configuration.
+![screen shot 2014-09-11 at 6 49 31 pm](https://cloud.githubusercontent.com/assets/979966/4244782/c949af3c-3a27-11e4-995f-4452647ed6a5.png)
+
+Wait till your test suite execution is finished.
+![screen shot 2014-08-15 at 12 07 45 pm](https://cloud.githubusercontent.com/assets/979966/4244800/355b8c22-3a28-11e4-9965-24df9fe18077.png)
+
+Switch to spy-js tool window to work with the trace.
+![screen shot 2014-08-15 at 12 14 47 pm](https://cloud.githubusercontent.com/assets/979966/4244801/425a1d44-3a28-11e4-84e0-0e7e5d1b08ea.png)
+
+I'm also using following capture exclusion to avoid noise from library files.
+![screen shot 2014-09-12 at 12 47 18 pm](https://cloud.githubusercontent.com/assets/979966/4244805/5ae90384-3a28-11e4-8530-5e41cbabc1df.png)
 
 ## Development proxy configuration
 If you're using development proxy, for instance to map minified files and replace them with local development versions, it is still possible to use spy-js to instrument and trace those development versions of JavaScript files.
