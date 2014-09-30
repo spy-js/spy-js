@@ -26,9 +26,10 @@ The documentation contains:
 * [PhantomJs](#phantomjs)
 * [Karma Runner] (#karma-runner)
 * [Development proxy (like Fiddler or Charles proxy) configiration](#development-proxy-configuration)
+ 	+ [HTTPS tracing configuration example](#https-tracing)
 * [Mobile device proxy configuration](#mobile-device-configuration)
 * [Virtual machine configuration](#virtual-machine-configuration)
-* [Troubleshooting and known issues](#known-issues)
+* [Troubleshooting, known issues and limitations](#known-issues)
 
 If something described in the documentation doesn't work for you, please check if it's one of the **[known issues](#known-issues)**. Feel free to ask your questions [on stackoverflow with spy-js tag](http://stackoverflow.com/questions/ask?tags=javascript+spy-js) or [in the repository issues](https://github.com/spy-js/spy-js/issues).
 
@@ -464,10 +465,10 @@ If you're using development proxy, for instance to map minified files and replac
 
 In the example below it's illustrated how to make Fiddler work with spy-js in WebStorm. The idea is to request your non-minified files via spy-js proxy server using local proxy mode URLs. In the example I'll replace minified sh\_javascript.min.js file from nodejs.org with my version sh\_javascript.js using Fiddler and will trace sh_javascript.js execution using spy-js.
 
-Create a new spy-js run configuration, uncheck "Automatically configure system proxy" checkbox.
+Create a new spy-js run configuration, uncheck "Automatically configure system proxy" checkbox.<br/>
 ![screen shot 2014-06-26 at 12 59 01 pm](https://cloud.githubusercontent.com/assets/979966/3394356/017203be-fcde-11e3-8cda-55b56c4ceed2.png)
 
-Configure AutoResponder in Fiddler as follows:
+Configure AutoResponder in Fiddler as follows:<br/>
 ![screen shot 2014-06-26 at 2 01 26 pm](https://cloud.githubusercontent.com/assets/979966/3394639/ab84fffc-fce6-11e3-8130-db2817c34e95.png)
 
 Start Fiddler and spy-js run configuration (the order doesn't matter), access the page in browser and see it traced in WebStorm.
@@ -475,6 +476,30 @@ Start Fiddler and spy-js run configuration (the order doesn't matter), access th
 Note that localhost:3546 is spy-js trace server launched by WebStorm, localhost:8080 is an address where your local non-minified files are hosted. I have used static [http-server](https://www.npmjs.org/package/http-server) to host them, but you can use any web server.
 
 First AutoResponder rule uses a regular expression to replace all files like file.min.js with corresponding file.js, last two rules are mandatory to make spy-js work on the page.
+
+#### HTTPS tracing
+Even though spy-js itself doesn't support tracing HTTPS secured web pages, you can still use it for tracing with a tool that can do SSL termination, for example with a development proxy like Fiddler or Charles Proxy.
+
+In the example below it's illustrated how to make Fiddler work with spy-js in WebStorm to trace HTTPS secured website. The idea is to use Fiddler to decrypt HTTPS traffic and request JavaScript files via spy-js proxy server using local proxy mode URLs. In the example I'll demonstrate how to set up Fiddler and spy-js to trace GitHub website. Other development proxies may need a bit different configuration, but the idea should still be applicable.
+
+Create a new spy-js run configuration, uncheck "Automatically configure system proxy" checkbox.<br/>
+![screen shot 2014-06-26 at 12 59 01 pm](https://cloud.githubusercontent.com/assets/979966/3394356/017203be-fcde-11e3-8cda-55b56c4ceed2.png)
+
+Configure Fiddler to decrypt HTTPS traffic:<br/>
+![screen shot 2014-09-30 at 11 37 30 am](https://cloud.githubusercontent.com/assets/979966/4452204/60424538-4843-11e4-97dd-093b023a3ea1.png)
+
+Configure AutoResponder in Fiddler as follows:<br/>
+![screen shot 2014-09-30 at 11 04 25 am](https://cloud.githubusercontent.com/assets/979966/4452220/acaeffd8-4843-11e4-93a4-d09d9c696c2a.png)
+
+First AutoResponder rule uses a regular expression to request all *.js files via spy-js proxy, last two rules are mandatory to make spy-js work on the page.
+
+Modify Fiddler rules (Rules - Customize Rules) as follows:<br/>
+![screen shot 2014-09-30 at 11 05 19 am](https://cloud.githubusercontent.com/assets/979966/4452261/208fbe10-4844-11e4-9ba8-7a1f8e22b8b8.png)
+
+Highlighted line just adds an additional HTTP response header, the header is required to configure Content Security Policy (for browsers that support it) to evaluate spy-js tracer code.
+
+Start Fiddler and spy-js run configuration (the order doesn't matter), access some HTTPS secured page in browser and see it traced in WebStorm.<br/>
+![screen shot 2014-09-30 at 11 07 04 am](https://cloud.githubusercontent.com/assets/979966/4452344/2c5a51e6-4845-11e4-8644-95a2d0c8e186.png)
 
 ## Mobile device configuration
 See configuration example for iOS in [spy-js WebStorm blog post](http://blog.jetbrains.com/webstorm/2014/04/spy-js-webstorm-secret-service/#mobile)
@@ -503,7 +528,7 @@ If spy-js tracing doesn't work for you (and console output or log file doesn't c
 * if you're using system proxy mode, make sure that system/browser proxy settings are using spy-js URL (by default ```localhost:3546```)
 * if you're using local proxy mode, note that the mode has [some limitations](#local-proxy)
 * tracing **scripts with incorrect (or without) Content-Type response header** is not supported. Some development web servers have default settings with incorrect Content-Type response header (or no Content-Type response header) for JavaScript files. Use your browser dev tools to check whether your script has correct Content-Type response header: ```text/javascript``` or ```application/x-javascript``` or ```application/javascript```.
-* tracing **https** secure websites is not supported at the moment
+* tracing **https** secure websites is not supported at the moment, however it is [possible to set up a development proxy to use with spy-js to trace HTTPS secured pages](#https-tracing)
 * tracing HTML **pages inline JavaScript** is not supported at the moment
 * integrated windows authentication is not supported
 * execution time figures display the time required to execute *modified code* and thus may significantly differ from the real figures; relatively to other spy-js collected performance metrics they make sense and may be used to identify and fix bottlenecks etc.; use target browser built-in profiler tools/v8 tools for node.js for precise figures
