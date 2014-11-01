@@ -3,11 +3,6 @@ module.exports = function($) {
   
   // URL to trace (optional)
   // $.root = 'http://todomvc.com/architecture-examples/knockoutjs/';
-  
-  // Local proxy port, if used 
-  // traced version of http://todomvc.com/architecture-examples/knockoutjs/ 
-  // will be available at http://localhost:3000/
-  // $.proxy = 3000;
 
   // in mapper function you can configure whether to trace certain scripts and how
   // by returning configuration object for the script(s) URL
