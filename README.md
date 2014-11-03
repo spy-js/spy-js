@@ -32,7 +32,7 @@ If something described in the documentation doesn't work for you, please check i
 In a nutshell, spy-js is a tool for JavaScript developers that allows to simply debug/trace/profile JavaScript on running on different platforms/browsers/devices. It fills gaps that existing browser development tools have and tackles common development tasks from a different angle.
 
 ## License
-Documentation and code samples in this repository are [licensed under MIT](https://github.com/spy-js/spy-js/blob/master/LICENSE). Spy-js tool itself isn’t open source.
+Documentation and code samples in this repository are licensed under MIT. Spy-js tool itself isn’t open source.
 
 ## Installation
 
