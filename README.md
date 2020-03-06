@@ -9,7 +9,7 @@
 The project is a part of IntelliJ product line, spy-js is bundled with WebStorm and IndelliJ IDEA Ultimate Edition and available as a [free downloadable plugin](http://plugins.jetbrains.com/plugin/7417) for PhpStorm, RubyMine and PyCharm Professional Edition. You can watch a 7 min [screencast here](http://www.youtube.com/watch?v=vPIbwxzC5cU) and read [a detailed feature walkthrough in WebStorm blog](http://blog.jetbrains.com/webstorm/2014/04/spy-js-webstorm-secret-service/).
 
 # spy-js documentation
-For full documentation please also visit [WebStorm web help](https://www.jetbrains.com/webstorm/help/tracing-with-spy-js.html?search=spy-js).
+For full documentation please also visit [WebStorm web help](https://www.jetbrains.com/help/webstorm/debugging-with-spy-js.html).
 
 This documentation covers various topics not covered (or covered briefly) in WebStorm web help, and contains:
 * [Overview](#overview)
